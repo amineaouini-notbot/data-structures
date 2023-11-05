@@ -7,11 +7,15 @@ class stackExample:
         self.data.append(value)
     def length(self):
         return len(self.data)
-    
-stack=stackExample()
+    def pop(self):
+        return self.data.pop()
 
-stack.push(1)
-stack.push(3)
+stack=stackExample() # init stack
 
+stack.push(1) # current stack [1]
+stack.push(3) # current stack [1, 3]
+
+print(stack.pop()) # current stack [1]
+stack.push(2) # current stack [1, 2]
+print(stack.length()) # prints 2 
 print(stack.data)
-print(stack.length())
