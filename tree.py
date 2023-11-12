@@ -17,6 +17,20 @@ class tree:
             else:
                 self.left = tree(val)
                 return val
+
+    def find(self, val):
+        if (val == self.val):
+            print(val, 'is found!!')
+            return val
+        elif((val > self.val) and (self.right)):
+            return self.right.find(val)
+            
+        elif((val < self.val) and (self.left)):
+            return self.left.find(val)
+        else:
+            print(val,'is not found!!')
+            return None
+            
         
 mytree = tree(5)
 
@@ -34,3 +48,6 @@ mytree.add(7)
 print(mytree.right.val)
 print(mytree.left.val) 
 print(mytree.right.left.val)
+mytree.find(8)
+mytree.find(9)
+mytree.find(4)
